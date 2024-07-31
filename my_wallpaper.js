@@ -4,15 +4,15 @@ let rect_width  = 40;
 let rect_height = 40;
 let distort = 1; // 1 is normal, less is upside down, more is bigger
 let eyeSize = 40; // scale size // 40 is good, dont change it
-let pupilColor = [31, 31, 31]; // black
+let pupilColor = [0, 0, 0]; // black
 let irisColor = [247, 223, 0]; // changes with time
-let eyeOutlineColor = [214, 0, 0]; // red
-let facepaintColor = [69, 0, 92]; // left face dark purple
+let eyeOutlineColor = [0, 0, 0]; // black
+let facepaintColor = [69, 0, 92]; // happy face dark purple
 let eyebrowColor = [61, 61, 61]; // black
-let midPupilColor = [31, 31, 31];
+let midPupilColor = [0, 0, 0]; // angry face center
 let midIrisColor = [247, 223, 0]; // red outline right face
 let midEyeOutlineColor = [214, 0, 0]; //
-let midFacepaintColor = [191, 0, 255]; // right face purple
+let midFacepaintColor = [255, 0, 204]; // angry face purple
 
 // IF statement
 //change iris color with time (in happy face only)
@@ -47,6 +47,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   push ();
   scale(distort);
+
+
 
   //////////// EYE PAINT 
   // left eye paint
@@ -204,6 +206,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   push();
   scale(distort);
 
+  ///////// FACES EYE PAINT QUADS
   // left eye paint
   noStroke();
   fill (midFacepaintColor); // green = (64, 255, 131)
@@ -317,7 +320,29 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(rightEBX2, rightEBY2, eyebrowW2, eyebrowH2);
   pop()
 
-  pop();
+  ////// HAPPY FACE NOSE 
+  // color nose
+  noStroke();
+  ellipse(125, 70, 70, 60);
+  fill (240, 240, 240);
+
+//highlight
+noStroke();
+ellipse(125, 50, 20, 10);
+fill (33, 33, 33);
+
+////// ANGRY FACE NOSE 
+//highlight
+noStroke();
+ellipse(375, 70, 70, 60);
+fill (240, 240, 240);
+
+//color nose
+noStroke();
+ellipse(375, 50, 20, 10);
+fill (33, 33, 33);
+  
+pop();
 
 }
 
