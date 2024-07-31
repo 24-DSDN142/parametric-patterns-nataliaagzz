@@ -7,20 +7,20 @@ let eyeSize = 40; // scale size // 40 is good, dont change it
 let pupilColor = [31, 31, 31]; // black
 let irisColor = [247, 223, 0]; // changes with time
 let eyeOutlineColor = [214, 0, 0]; // red
-let facepaintColor = [64, 255, 131]; 
-let eyebrowColor = [87, 71, 255]; // blue
+let facepaintColor = [69, 0, 92]; // left face dark purple
+let eyebrowColor = [61, 61, 61]; // black
 let midPupilColor = [31, 31, 31];
-let midIrisColor = [247, 223, 0]; 
+let midIrisColor = [247, 223, 0]; // red outline right face
 let midEyeOutlineColor = [214, 0, 0]; //
-let midFacepaintColor = [36, 255, 211]; // rombos color
+let midFacepaintColor = [191, 0, 255]; // right face purple
 
 // IF statement
-//change iris color with time
+//change iris color with time (in happy face only)
 let date = new Date();
 let min = date.getMinutes();
-// if the current minutes is an even number, the eyes turn pink
+// if the current minutes is an even number, the eyes turn blue
 if (min % 2 == 0) {
-  irisColor = [235, 52, 235]; // pink
+  irisColor = [0, 247, 255]; // blue
 // if not, osea odd numbers: turn green
 } else {
   irisColor = [121, 255, 54]; // green
@@ -48,9 +48,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   push ();
   scale(distort);
 
+  //////////// EYE PAINT 
   // left eye paint
   noStroke();
-  fill (facepaintColor); // green = (64, 255, 131)
+  fill (facepaintColor); 
   quad (54, 62, 90, 50, 54, 38, 18, 50);
 
   noStroke();
@@ -152,14 +153,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   // happy face mouth
   push();
   noStroke();
-  fill (255, 79, 141); // pink
+  fill (138, 0, 0); // red
   rotate(rotateL);
   ellipse(leftX, leftY, mouthW, mouthH);
   pop();
 
   push();
   noStroke();
-  fill (255, 79, 141); // pink
+  fill (138, 0, 0); // red
   rotate(rotateR);
   ellipse(rightX, rightY, mouthW, mouthH);
   pop();
@@ -197,8 +198,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   pop()
 
   pop (); ////////////////////////////////////////////////////////////
-
-  let x = 252; // distance of second face
+ 
+  let x = 252; // distance of second face // 252 is normal with 
 
   push();
   scale(distort);
@@ -262,7 +263,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
         stroke(255, 255, 255);
         arc(180+x, 50, 28, 28, 45, 90); //x and y set the location of the arc's center. w and h set the arc's width and height
 
-      // arc 3 left circle //up?
+      // arc 3 left circle
       noFill();
       stroke(255, 255, 255);
       arc(70+x, 50, 30, 30, 45, 90);
@@ -273,14 +274,15 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(180+x, 50, 20, 20); // right circle
   ellipse(70+x, 50, 20, 20); // left circle
 
+  /////// ANGRY FACE MOUTH AND LIPS
   // lips
   noStroke();
-  fill (255, 150, 187); // light pink
+  fill (41, 16, 39); // black pink
   ellipse(122+x, 150, 170, 70); 
 
   //mouth
   noStroke();
-  fill (255, 79, 141); // pink
+  fill (138, 0, 0); // red
   ellipse(122+x, 150, 150, 50);
 
   //////////////// ANGRY FACE EYEBROWS
@@ -302,7 +304,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   // left eyebrow
   push();
   noStroke();
-  fill (eyebrowColor); // light pink
+  fill (eyebrowColor); // blue
   rotate(eyeBrotateL2);
   ellipse(leftEBX2, leftEBY2, eyebrowW2, eyebrowH2);
   pop()
@@ -310,7 +312,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   // right eyebrow
   push();
   noStroke();
-  fill (eyebrowColor); // light pink
+  fill (eyebrowColor); // blue
   rotate(eyeBRotateR2);
   ellipse(rightEBX2, rightEBY2, eyebrowW2, eyebrowH2);
   pop()
