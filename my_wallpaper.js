@@ -7,12 +7,12 @@ let eyeSize = 40; // scale size // 40 is good, dont change it
 let pupilColor = [0, 0, 0]; // happy face black
 let irisColor = [247, 223, 0]; // changes with time
 let eyeOutlineColor = [255, 254, 237]; // happy face white outer
-let facepaintColor = [21, 0, 255]; // happy face makeup blue
-let eyebrowColor = [0, 255, 4]; // white
+let facepaintColor = [255, 243, 56]; // happy face makeup yellow
+let eyebrowColor = [31, 140, 21]; // dark green
 let midPupilColor = [0, 0, 0]; // angry face center eye
 let midIrisColor = [255, 254, 237]; // angry face cyan
 let midEyeOutlineColor = [255, 254, 237]; // angry face white outer
-let midFacepaintColor = [21, 0, 255]; // angry face makeup blue
+let midFacepaintColor = [255, 243, 56]; // angry face makeup yellow
 
 // IF statement
 //change iris color with time (in happy face only)
@@ -39,7 +39,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(255, 255, 255); // white
+  background(232, 229, 181); // beige
 
 }
 
@@ -48,6 +48,32 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   push ();
   scale(distort);
 
+//////////////// SPRINKLES/ PEPPERONI (FOR PIZZA CLOWN AND CHOCOMINT CLOWN)
+  fill (207, 21, 21); // red
+  //ellipse(200, 1,  25, 25);
+  //ellipse(500, 70,  15, 15);
+  //ellipse(700, 90,  15, 15);
+  //ellipse(400, 200, 35, 35);
+  //ellipse(100, 20,  15, 15);
+  //ellipse(50, 10,  15, 15);
+  //ellipse(1000, 160,  45, 45);
+  //ellipse(800, 100,  45, 45);
+  //ellipse(100, 1000,  45, 45);
+
+///////////////// FACE (FOR PIZZA CLOWN)
+noStroke();
+fill (244, 255, 140); // yellow 
+ellipse(125, 70, 160, 160);
+noStroke();
+fill (244, 255, 140); // yellow
+ellipse(370, 70, 160, 160);
+
+////////////////// CHEEKS
+fill (207, 21, 21); // RED
+ellipse(450, 90, 50, 50); // angry right
+ellipse(300, 90, 50, 50); // angry left
+ellipse(50, 90, 50, 50); // happy left
+ellipse(200, 90, 50, 50); // happy right
 
   //////////// EYE PAINT 
   // left eye paint
@@ -154,14 +180,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ////////////////////// HAPPY FACE MOUTH
   push();
   noStroke();
-  fill (92, 8, 31); // red dark
+  fill (204, 203, 173); // beige dark
   rotate(rotateL);
   ellipse(leftX, leftY, mouthW, mouthH);
   pop();
 
   push();
   noStroke();
-  fill (92, 8, 31); // red dark
+  fill (204, 203, 173); // beige dark
   rotate(rotateR);
   ellipse(rightX, rightY, mouthW, mouthH);
   pop();
@@ -284,7 +310,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   //mouth
   noStroke();
-  fill (92, 8, 31); // red dark
+  fill (204, 203, 173); // biege dark
   ellipse(122+x, 150, 150, 50);
 
   //////////////// ANGRY FACE EYEBROWS
@@ -323,42 +349,47 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   // nose
   noStroke();
   fill (255, 0, 0); // red
-  ellipse(125, 70, 70, 60);
+  //ellipse(125, 70, 70, 60);
   
   //highlight
   noStroke();
   fill (255, 255, 255); // white
-  ellipse(125, 50, 20, 10);
+  //ellipse(125, 50, 20, 10);
 
   ////////////// ANGRY FACE NOSE 
   //base color
   noStroke();
   fill (255, 0, 0); // red
-  ellipse(375, 70, 70, 60);
+  //ellipse(375, 70, 70, 60);
 
   //highlight
   noStroke();
   fill (255, 255, 255); // white
-  ellipse(375, 50, 20, 10);
-  
-//sprinkles
-//fill (52, 217, 143); // mint 
- //ellipse(380, 30, 10, 5);
-  //ellipse(500, 70, 10, 5);
-  //ellipse(700, 90, 10, 5);
-  //ellipse(400, 200, 10, 5);
-  //ellipse(100, 20, 10, 5);
-  //ellipse(50, 10, 10, 5);
-  //ellipse(800, 100, 10, 5);
-  //ellipse(800, 100, 10, 5);
-  //ellipse(300, 1000, 10, 5);
+  //ellipse(375, 50, 20, 10);
 
-// cheeks
-fill (255, 143, 246); // pink
-ellipse(450, 90, 50, 50); // angry right
-ellipse(300, 90, 50, 50); // angry left
-ellipse(50, 90, 50, 50); // happy left
-ellipse(200, 90, 50, 50); // happy right
+  ///////////////// HAPPY FACE MUSHROOM NOSE
+  noStroke();
+  fill (209, 207, 167);
+  ellipse(128, 50, 60, 50);
+  rect(114, 60, 30, 30);
+
+  //FILL
+  noStroke();
+  fill (232, 230, 186);
+  ellipse(128, 50, 50, 40);
+  rect(119, 60, 20, 20);
+
+  ///////////////// ANGRY FACE MUSHROOM NOSE
+  noStroke();
+  fill (209, 207, 167);
+  ellipse(378, 50, 60, 50);
+  rect(364, 60, 30, 30);
+
+  //FILL
+  noStroke();
+  fill (232, 230, 186);
+  ellipse(378, 50, 50, 40);
+  rect(368, 60, 20, 20);
 
 
 pop();
