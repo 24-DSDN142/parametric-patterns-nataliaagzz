@@ -4,26 +4,26 @@ let rect_width  = 40;
 let rect_height = 40;
 let distort = 1; // 1 is normal, less is upside down, more is bigger
 let eyeSize = 40; // scale size // 40 is good, dont change it
-let pupilColor = [0, 0, 0]; // black
+let pupilColor = [0, 0, 0]; // happy face white center eye
 let irisColor = [247, 223, 0]; // changes with time
-let eyeOutlineColor = [0, 0, 0]; // black
-let facepaintColor = [69, 0, 92]; // happy face dark purple
-let eyebrowColor = [61, 61, 61]; // black
-let midPupilColor = [0, 0, 0]; // angry face center
-let midIrisColor = [247, 223, 0]; // red outline right face
-let midEyeOutlineColor = [214, 0, 0]; //
-let midFacepaintColor = [255, 0, 204]; // angry face purple
+let eyeOutlineColor = [242, 179, 255]; // happy face makeup pastel purple
+let facepaintColor = [179, 255, 249]; // happy face makeup pastel blue
+let eyebrowColor = [255, 179, 235]; // pastel pink
+let midPupilColor = [0, 0, 0]; // angry face center eye
+let midIrisColor = [255, 251, 168]; // yellow outline right face
+let midEyeOutlineColor = [179, 255, 249]; // angry face blue
+let midFacepaintColor = [242, 179, 255]; // angry face makeup pastel purple
 
 // IF statement
 //change iris color with time (in happy face only)
 let date = new Date();
 let min = date.getMinutes();
-// if the current minutes is an even number, the eyes turn blue
+// if the current minutes is an even number, the eyes turn aqua
 if (min % 2 == 0) {
-  irisColor = [0, 247, 255]; // blue
-// if not, osea odd numbers: turn green
+  irisColor = [158, 255, 218]; // aqua
+// if not, osea odd numbers: turn pink
 } else {
-  irisColor = [121, 255, 54]; // green
+  irisColor = [252, 158, 255]; // pink
 }
 
 function setup_wallpaper(pWallpaper) {
@@ -35,7 +35,7 @@ function setup_wallpaper(pWallpaper) {
   noStroke();
   pWallpaper.grid_settings.cell_width  = 500; // was 600
   pWallpaper.grid_settings.cell_height = 200; // was 200
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.row_offset  = 100;
 }
 
 function wallpaper_background() {
@@ -81,9 +81,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(180, 50, eyeSize, eyeSize); // right circle // draws a circle 45 pixels accross at location 100 pixels accross and 100 pixels down 
   ellipse(70, 50, eyeSize, eyeSize); // left circle
 
-  // eye nerves
-  strokeWeight(5);
-  stroke (eyeOutlineColor); // red = (214, 0, 0)
+  ///////////// HAPPY FACE EYE BLOOD
+  //strokeWeight(5);
+  //stroke (eyeOutlineColor); // red = (214, 0, 0)
   
         // right eye
         line (190, 85, 190, 40);
@@ -137,37 +137,37 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   let mouthW = 90;
   let mouthH = 30;
 
-  // happy face lips
+  // HAPPY FACE LIPS
   push();
   noStroke();
-  fill (255, 46, 46); // red
+  fill (200, 255, 171); // pastel green
   rotate(rotateL);
   ellipse(leftX, leftY, lipW, lipH);
   pop()
 
   push();
   noStroke();
-  fill (255, 46, 46); // red
+  fill (200, 255, 171); // pastel green
   rotate(rotateR);
   ellipse(rightX, rightY, lipW, lipH);
   pop()
 
-  // happy face mouth
+  // HAPPY FACE MOUTH
   push();
   noStroke();
-  fill (138, 0, 0); // red
+  fill (255, 254, 240); // white
   rotate(rotateL);
   ellipse(leftX, leftY, mouthW, mouthH);
   pop();
 
   push();
   noStroke();
-  fill (138, 0, 0); // red
+  fill (255, 254, 240); // white
   rotate(rotateR);
   ellipse(rightX, rightY, mouthW, mouthH);
   pop();
 
-  // happy face eyebrows
+  // HAPPY FACE EYEBROWS
   // parameters for the eyebrows
   // location
   let leftEBX = 53;
@@ -188,7 +188,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   noStroke();
   fill (eyebrowColor); // light pink
   rotate(eyeBrotateL);
-  ellipse(leftEBX, leftEBY, eyebrowW, eyebrowH);
+  //ellipse(leftEBX, leftEBY, eyebrowW, eyebrowH);
   pop()
 
   // right eyebrow
@@ -196,7 +196,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   noStroke();
   fill (eyebrowColor); // light pink
   rotate(eyeBRotateR);
-  ellipse(rightEBX, rightEBY, eyebrowW, eyebrowH);
+  //ellipse(rightEBX, rightEBY, eyebrowW, eyebrowH);
   pop()
 
   pop (); ////////////////////////////////////////////////////////////
@@ -209,7 +209,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ///////// FACES EYE PAINT QUADS
   // left eye paint
   noStroke();
-  fill (midFacepaintColor); // green = (64, 255, 131)
+  fill (midFacepaintColor); 
   quad (54+x, 62, 90+x, 50, 54+x, 38, 18+x, 50);
 
   noStroke();
@@ -239,9 +239,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(180+x, 50, eyeSize, eyeSize); // right circle // draws a circle 45 pixels accross at location 100 pixels accross and 100 pixels down 
   ellipse(70+x, 50, eyeSize, eyeSize); // left circle
 
-  // eye nerves
-  strokeWeight(5);
-  stroke (midEyeOutlineColor); // red = (214, 0, 0)
+  //////////// EYE BLOOD
+  //strokeWeight(5);
+  //stroke (midEyeOutlineColor); // red = (214, 0, 0)
 
         // right eye
         line (190+x, 85, 190+x, 40);
@@ -280,12 +280,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   /////// ANGRY FACE MOUTH AND LIPS
   // lips
   noStroke();
-  fill (41, 16, 39); // black pink
+  fill (255, 251, 171); // pastel yellow
   ellipse(122+x, 150, 170, 70); 
 
   //mouth
   noStroke();
-  fill (138, 0, 0); // red
+  fill (255, 254, 240); // white
   ellipse(122+x, 150, 150, 50);
 
   //////////////// ANGRY FACE EYEBROWS
@@ -307,7 +307,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   // left eyebrow
   push();
   noStroke();
-  fill (eyebrowColor); // blue
+  //fill (eyebrowColor); // blue
   rotate(eyeBrotateL2);
   ellipse(leftEBX2, leftEBY2, eyebrowW2, eyebrowH2);
   pop()
@@ -315,32 +315,32 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   // right eyebrow
   push();
   noStroke();
-  fill (eyebrowColor); // blue
+  //fill (eyebrowColor); // blue
   rotate(eyeBRotateR2);
   ellipse(rightEBX2, rightEBY2, eyebrowW2, eyebrowH2);
   pop()
 
-  ////// HAPPY FACE NOSE 
-  // color nose
+  ///////////////// HAPPY FACE NOSE 
+  // nose
   noStroke();
+  fill (255, 251, 189); // pastel yellow
   ellipse(125, 70, 70, 60);
-  fill (240, 240, 240);
+  
+  //highlight
+  noStroke();
+  fill (255, 255, 255); // white
+  ellipse(125, 50, 20, 10);
 
-//highlight
-noStroke();
-ellipse(125, 50, 20, 10);
-fill (33, 33, 33);
+  ////////////// ANGRY FACE NOSE 
+  //base color
+  noStroke();
+  fill (200, 255, 170); // pastel green
+  ellipse(375, 70, 70, 60);
 
-////// ANGRY FACE NOSE 
-//highlight
-noStroke();
-ellipse(375, 70, 70, 60);
-fill (240, 240, 240);
-
-//color nose
-noStroke();
-ellipse(375, 50, 20, 10);
-fill (33, 33, 33);
+  //highlight
+  noStroke();
+  fill (255, 255, 255); // white
+  ellipse(375, 50, 20, 10);
   
 pop();
 
