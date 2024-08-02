@@ -4,26 +4,26 @@ let rect_width  = 40;
 let rect_height = 40;
 let distort = 1; // 1 is normal, less is upside down, more is bigger
 let eyeSize = 40; // scale size // 40 is good, dont change it
-let pupilColor = [0, 0, 0]; // happy face inner circle yellow
+let pupilColor = [0, 0, 0]; // happy face inner circle black
 let irisColor = [247, 223, 0]; // changes with time
-let eyeOutlineColor = [186, 255, 196]; // happy face green outer
-let facepaintColor = [54, 181, 29]; // happy face makeup green
+let eyeOutlineColor = [209, 209, 209]; // happy face white outer
+let facepaintColor = [36, 36, 36]; // happy face makeup grey
 let eyebrowColor = [255, 0, 0]; // red
 let midPupilColor = [0, 0, 0]; // angry face center eye
-let midIrisColor = [186, 255, 196]; // angry face green
-let midEyeOutlineColor = [186, 255, 196]; // angry face green outer
-let midFacepaintColor = [54, 181, 29]; // angry face makeup green
+let midIrisColor = [105, 97, 97]; // angry face green
+let midEyeOutlineColor = [209, 209, 209]; // angry face white outer
+let midFacepaintColor = [105, 97, 97]; // angry face makeup green
 
 // IF statement
 //change iris color with time (in happy face only)
 let date = new Date();
 let min = date.getMinutes();
-// if the current minutes is an even number, the eyes turn blue
+// if the current minutes is an even number, the eyes turn sepia
 if (min % 2 == 0) {
-  irisColor = [23, 54, 255]; // blue
-// if not, osea odd numbers: turn purple
+  irisColor = [64, 53, 53]; // sepia
+// if not, osea odd numbers: turn grey dark
 } else {
-  irisColor = [206, 43, 255]; // purple
+  irisColor = [105, 97, 97]; // dark 
 }
 
 function setup_wallpaper(pWallpaper) {
@@ -39,7 +39,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(88, 255, 54); // green
+  background(207, 207, 207); // grey super light
 
 }
 
@@ -50,14 +50,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
 //////////////// SPRINKLES/ PEPPERONI / HOLES (FOR PIZZA CLOWN, SLIMEY CLOWN AND CHOCOMINT CLOWN)
   fill (73, 219, 44); // green light
-  ellipse(250, 1,  25, 25);
-  ellipse(500, 70,  25, 25);
-  ellipse(700, 90,  25, 25);
+  //ellipse(250, 1,  25, 25);
+  //ellipse(500, 70,  25, 25);
+  //ellipse(700, 90,  25, 25);
   //ellipse(400, 200, 35, 35);
-  ellipse(100, 20,  15, 15);
-  ellipse(300, 800,  15, 15);
+  //ellipse(100, 20,  15, 15);
+  //ellipse(300, 800,  15, 15);
   //ellipse(1000, 160,  45, 45);
-  ellipse(1000, 600,  15, 15);
+  //ellipse(1000, 600,  15, 15);
   //ellipse(100, 1000,  45, 45);
 
 ///////////////// FACE (FOR PIZZA CLOWN)
@@ -69,7 +69,7 @@ fill (244, 255, 140); // yellow
 //ellipse(370, 70, 160, 160);
 
 ////////////////// CHEEKS
-fill (69, 240, 36); // green dark
+fill (84, 84, 84); // grey dark
 ellipse(450, 90, 50, 50); // angry right
 ellipse(300, 90, 50, 50); // angry left
 ellipse(50, 90, 50, 50); // happy left
@@ -176,14 +176,14 @@ ellipse(200, 90, 50, 50); // happy right
   ////////////////////// HAPPY FACE LIPS
   push();
   noStroke();
-  fill (54, 181, 29); // green
+  fill (82, 82, 82); // grey
   rotate(rotateL);
   ellipse(leftX, leftY, lipW, lipH);
   pop()
 
   push();
   noStroke();
-  fill (54, 181, 29); // green
+  fill (82, 82, 82); // grey
   rotate(rotateR);
   ellipse(rightX, rightY, lipW, lipH);
   pop()
@@ -191,14 +191,14 @@ ellipse(200, 90, 50, 50); // happy right
   ////////////////////// HAPPY FACE MOUTH
   push();
   noStroke();
-  fill (54, 181, 29); // green
+  fill (10, 10, 10); // black
   rotate(rotateL);
   ellipse(leftX, leftY, mouthW, mouthH);
   pop();
 
   push();
   noStroke();
-  fill (54, 181, 29); // green
+  fill (10, 10, 10); // black
   rotate(rotateR);
   ellipse(rightX, rightY, mouthW, mouthH);
   pop();
@@ -328,12 +328,12 @@ ellipse(200, 90, 50, 50); // happy right
   /////// ANGRY FACE MOUTH AND LIPS
   // lips
   noStroke();
-  fill (54, 181, 29); // green
+  fill (82, 82, 82); // grey
   ellipse(122+x, 150, 170, 70); 
 
   //mouth
   noStroke();
-  fill (54, 181, 29); // green
+  fill (20, 20, 20); // black
   ellipse(122+x, 150, 150, 50);
 
   ///////////////// ANGRY FACE EYEBROWS
@@ -371,23 +371,23 @@ ellipse(200, 90, 50, 50); // happy right
   ///////////////// HAPPY FACE NOSE 
   // nose
   noStroke();
-  fill (22, 77, 11); // green
+  fill (82, 82, 82); // grey
   ellipse(125, 70, 70, 60);
   
   //highlight
   noStroke();
-  fill (222, 11, 11); // red lght
+  fill (179, 179, 179); // grey claro
   ellipse(125, 50, 20, 10);
 
   ////////////// ANGRY FACE NOSE 
   //base color
   noStroke();
-  fill (22, 77, 11); // green
+  fill (82, 82, 82); // grey
   ellipse(375, 70, 70, 60);
 
   //highlight
   noStroke();
-  fill (222, 11, 11); // red light
+  fill (179, 179, 179); // grey claro
   ellipse(375, 50, 20, 10);
 
   ///////////////// HAPPY FACE MUSHROOM NOSE (FOR PIZZA CLOWNS)
