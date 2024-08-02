@@ -7,12 +7,12 @@ let eyeSize = 40; // scale size // 40 is good, dont change it
 let pupilColor = [0, 0, 0]; // happy face black
 let irisColor = [247, 223, 0]; // changes with time
 let eyeOutlineColor = [255, 254, 237]; // happy face white outer
-let facepaintColor = [255, 243, 56]; // happy face makeup yellow
-let eyebrowColor = [31, 140, 21]; // dark green
+let facepaintColor = [186, 209, 255]; // happy face makeup blue
+let eyebrowColor = [255, 255, 255]; // white
 let midPupilColor = [0, 0, 0]; // angry face center eye
 let midIrisColor = [255, 254, 237]; // angry face cyan
 let midEyeOutlineColor = [255, 254, 237]; // angry face white outer
-let midFacepaintColor = [255, 243, 56]; // angry face makeup yellow
+let midFacepaintColor = [186, 209, 255]; // angry face makeup blue
 
 // IF statement
 //change iris color with time (in happy face only)
@@ -39,7 +39,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(232, 229, 181); // beige
+  background(0, 183, 255); // blue
 
 }
 
@@ -49,27 +49,27 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   scale(distort);
 
 //////////////// SPRINKLES/ PEPPERONI (FOR PIZZA CLOWN AND CHOCOMINT CLOWN)
-  fill (207, 21, 21); // red
-  //ellipse(200, 1,  25, 25);
-  //ellipse(500, 70,  15, 15);
-  //ellipse(700, 90,  15, 15);
+  fill (255, 255, 255); // white
+  ellipse(250, 1,  15, 15);
+  ellipse(500, 70,  15, 15);
+  ellipse(700, 90,  15, 15);
   //ellipse(400, 200, 35, 35);
-  //ellipse(100, 20,  15, 15);
-  //ellipse(50, 10,  15, 15);
+  ellipse(100, 20,  15, 15);
+  ellipse(300, 800,  15, 15);
   //ellipse(1000, 160,  45, 45);
-  //ellipse(800, 100,  45, 45);
+  ellipse(1000, 600,  15, 15);
   //ellipse(100, 1000,  45, 45);
 
 ///////////////// FACE (FOR PIZZA CLOWN)
 noStroke();
 fill (244, 255, 140); // yellow 
-ellipse(125, 70, 160, 160);
+//ellipse(125, 70, 160, 160);
 noStroke();
 fill (244, 255, 140); // yellow
-ellipse(370, 70, 160, 160);
+//ellipse(370, 70, 160, 160);
 
 ////////////////// CHEEKS
-fill (207, 21, 21); // RED
+fill (255, 186, 252); // cold pink
 ellipse(450, 90, 50, 50); // angry right
 ellipse(300, 90, 50, 50); // angry left
 ellipse(50, 90, 50, 50); // happy left
@@ -110,16 +110,43 @@ ellipse(200, 90, 50, 50); // happy right
   strokeWeight(5);
   stroke (eyeOutlineColor); // 
   
+  // ORIGINAL LOCATION 
         // right eye
-        line (190, 85, 190, 40);
-        line (175, 89, 175, 45);
-        line (185, 80, 185, 40);
+        //line (190, 85, 190, 40);
+       // line (175, 89, 175, 45);
+        //line (185, 80, 185, 40);
 
         // left eye // ellipse (70, 50, 40, 40)
-        line (60, 85, 60, 40);
-        line (75, 89, 75, 45);
-        line (70, 80, 70, 40);
+       //line (60, 85, 60, 40);
+       //line (75, 89, 75, 45);
+       //line (70, 80, 70, 40);
 
+      ///////////////////// FROSTED EYEBROWS HAPPY FACE (FOR YETI CLOWNS)
+      //right eye
+      line (190, 15, 190, 5);
+      line (175, 19, 175, 10);
+      line (185, 10, 185, 5);
+
+      // left eye // ellipse (70, 50, 40, 40)
+      line (60, 10, 60, 10);
+      line (75, 10, 75, 15);
+      line (70, 5, 70, 10);
+
+///////////////////////////////REFERENCE//////////////////////////////////////////
+      // left eye // ellipse (70, 50, 40, 40)
+      //line (60, 85, 60, 40);
+      // line (75, 89, 75, 45);
+      //line (70, 80, 70, 40);
+
+       // right eye
+       //line (190+x, 25, 190+x, 5);
+       //line (175+x, 29, 175+x, 10);
+       //line (185+x, 20, 185+x, 5);
+
+       // left eye // ellipse (70, 50, 40, 40)
+       //line (60+x, 25, 60+x, 5);
+       //line (75+x, 29, 75+x, 10);
+       //line (70+x, 20, 70+x, 5);
 
   // iris
   noStroke();
@@ -165,14 +192,14 @@ ellipse(200, 90, 50, 50); // happy right
   ////////////////////// HAPPY FACE LIPS
   push();
   noStroke();
-  fill (255, 0, 0); // red
+  fill (255, 255, 255); // white
   rotate(rotateL);
   ellipse(leftX, leftY, lipW, lipH);
   pop()
 
   push();
   noStroke();
-  fill (255, 0, 0); // red
+  fill (255, 255, 255); // white
   rotate(rotateR);
   ellipse(rightX, rightY, lipW, lipH);
   pop()
@@ -180,14 +207,14 @@ ellipse(200, 90, 50, 50); // happy right
   ////////////////////// HAPPY FACE MOUTH
   push();
   noStroke();
-  fill (204, 203, 173); // beige dark
+  fill (115, 124, 255); // blue dark
   rotate(rotateL);
   ellipse(leftX, leftY, mouthW, mouthH);
   pop();
 
   push();
   noStroke();
-  fill (204, 203, 173); // beige dark
+  fill (115, 124, 255); // dark blue
   rotate(rotateR);
   ellipse(rightX, rightY, mouthW, mouthH);
   pop();
@@ -254,29 +281,41 @@ ellipse(200, 90, 50, 50); // happy right
 
   //circles shadow
   noStroke();
-  fill (0, 0, 0); // black
+  fill (230, 230, 230); // grey
   ellipse(178+x, 48, eyeSize, eyeSize); // right eye // draws a circle 45 pixels accross at location 100 pixels accross and 100 pixels down 
   ellipse(68+x, 48, eyeSize, eyeSize); // left eye
 
   // eye outline
   noStroke();
-  fill (midEyeOutlineColor); // red = (214, 0, 0)
+  fill (midEyeOutlineColor); //
   ellipse(180+x, 50, eyeSize, eyeSize); // right circle // draws a circle 45 pixels accross at location 100 pixels accross and 100 pixels down 
   ellipse(70+x, 50, eyeSize, eyeSize); // left circle
 
-  //////////// EYE BLOOD
+  //////////////////////////// EYE BLOOD ANGRY FACE
   strokeWeight(5);
-  stroke (midEyeOutlineColor); // red = (214, 0, 0)
+  stroke (midEyeOutlineColor);
 
+//ORIGINAL LOCATIONS
         // right eye
-        line (190+x, 85, 190+x, 40);
-        line (175+x, 89, 175+x, 45);
-        line (185+x, 80, 185+x, 40);
+        //line (190+x, 85, 190+x, 40);
+       // line (175+x, 89, 175+x, 45);
+        //line (185+x, 80, 185+x, 40);
 
         // left eye // ellipse (70, 50, 40, 40)
-        line (60+x, 85, 60+x, 40);
-        line (75+x, 89, 75+x, 45);
-        line (70+x, 80, 70+x, 40);
+        //line (60+x, 85, 60+x, 40);
+        //line (75+x, 89, 75+x, 45);
+        //line (70+x, 80, 70+x, 40);
+
+/////////////////////// FROSTED EYEBROWS (For Yeti Clowns)
+         // right eye
+         line (190+x, 25, 190+x, 5);
+         line (175+x, 29, 175+x, 10);
+         line (185+x, 20, 185+x, 5);
+ 
+         // left eye // ellipse (70, 50, 40, 40)
+         line (60+x, 25, 60+x, 5);
+         line (75+x, 29, 75+x, 10);
+         line (70+x, 20, 70+x, 5);
 
 
   // iris
@@ -305,15 +344,15 @@ ellipse(200, 90, 50, 50); // happy right
   /////// ANGRY FACE MOUTH AND LIPS
   // lips
   noStroke();
-  fill (255, 0, 0); // red
+  fill (255, 255, 255); // white
   ellipse(122+x, 150, 170, 70); 
 
   //mouth
   noStroke();
-  fill (204, 203, 173); // biege dark
+  fill (115, 124, 255); // dark blue
   ellipse(122+x, 150, 150, 50);
 
-  //////////////// ANGRY FACE EYEBROWS
+  ///////////////// ANGRY FACE EYEBROWS
   // parameters for the eyebrows
   // location
   let leftEBX2 = 65+x;
@@ -348,48 +387,48 @@ ellipse(200, 90, 50, 50); // happy right
   ///////////////// HAPPY FACE NOSE 
   // nose
   noStroke();
-  fill (255, 0, 0); // red
-  //ellipse(125, 70, 70, 60);
+  fill (255, 186, 252); // cold pink
+  ellipse(125, 70, 70, 60);
   
   //highlight
   noStroke();
   fill (255, 255, 255); // white
-  //ellipse(125, 50, 20, 10);
+  ellipse(125, 50, 20, 10);
 
   ////////////// ANGRY FACE NOSE 
   //base color
   noStroke();
-  fill (255, 0, 0); // red
-  //ellipse(375, 70, 70, 60);
+  fill (255, 186, 252); // cold pink
+  ellipse(375, 70, 70, 60);
 
   //highlight
   noStroke();
   fill (255, 255, 255); // white
-  //ellipse(375, 50, 20, 10);
+  ellipse(375, 50, 20, 10);
 
-  ///////////////// HAPPY FACE MUSHROOM NOSE
+  ///////////////// HAPPY FACE MUSHROOM NOSE (FOR PIZZA CLOWNS)
   noStroke();
   fill (209, 207, 167);
-  ellipse(128, 50, 60, 50);
-  rect(114, 60, 30, 30);
+  //ellipse(128, 50, 60, 50);
+  //rect(114, 60, 30, 30);
 
   //FILL
   noStroke();
   fill (232, 230, 186);
-  ellipse(128, 50, 50, 40);
-  rect(119, 60, 20, 20);
+  //ellipse(128, 50, 50, 40);
+  //rect(119, 60, 20, 20);
 
-  ///////////////// ANGRY FACE MUSHROOM NOSE
+  ///////////////// ANGRY FACE MUSHROOM NOSE (FOR PIZZA CLOWNS)
   noStroke();
   fill (209, 207, 167);
-  ellipse(378, 50, 60, 50);
-  rect(364, 60, 30, 30);
+  //ellipse(378, 50, 60, 50);
+ // rect(364, 60, 30, 30);
 
   //FILL
   noStroke();
   fill (232, 230, 186);
-  ellipse(378, 50, 50, 40);
-  rect(368, 60, 20, 20);
+  //ellipse(378, 50, 50, 40);
+  //rect(368, 60, 20, 20);
 
 
 pop();
